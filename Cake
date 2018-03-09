@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cake
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int width = int.Parse(Console.ReadLine());
+            int lenght = int.Parse(Console.ReadLine());
+            int sum = width * lenght;
+                       
+            while (sum >= 0)
+            {
+                var n = Console.ReadLine().ToLower();
+                if (n == "stop")
+                {
+                    break;
+                }
+                sum -= int.Parse(n);
+
+            }
+            if (sum >= 0)
+            {
+                Console.WriteLine("{0} pieces are left.", sum);
+            }
+            else
+            {
+                Console.WriteLine("No more cake left! You need {0} pieces more.", sum * -1);
+            }
+        }
+    }
+}
