@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Scholarship
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double income = double.Parse(Console.ReadLine());
+            double averageSuccess = double.Parse(Console.ReadLine());
+            double minSalary = double.Parse(Console.ReadLine());
+
+            double social = Math.Floor(minSalary * 0.35);
+            double excellent = Math.Floor(averageSuccess * 25);
+            if (income >= minSalary)
+            {                
+                if (averageSuccess < 5.50)
+                {
+                    Console.WriteLine($"You cannot get a scholarship!");
+                }
+                else if (averageSuccess >= 5.50)
+                {
+                    Console.WriteLine($"You get a scholarship for excellent results {excellent} BGN");
+                }
+            }
+            else 
+            {
+                if (averageSuccess < 4.50)
+                {
+                    Console.WriteLine($"You cannot get a scholarship!");
+                }
+                else if (averageSuccess > 4.50 && averageSuccess < 5.50)
+                {
+                    Console.WriteLine($"You get a Social scholarship {social} BGN");
+                }
+                else if (averageSuccess >= 5.50 && excellent >= social)
+                {
+                    Console.WriteLine($"You get a scholarship for excellent results {excellent} BGN");
+                    
+                }
+                else if (averageSuccess >= 5.50 && excellent < social)
+                {
+                    Console.WriteLine($"You get a Social scholarship {social} BGN");
+                }
+
+            }
+            
+
+        }
+    }
+}
