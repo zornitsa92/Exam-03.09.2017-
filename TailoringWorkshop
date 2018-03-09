@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TailoringWorkshop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int tables = int.Parse(Console.ReadLine());
+            double length = double.Parse(Console.ReadLine());
+            double width = double.Parse(Console.ReadLine());
+
+            double pokrivki = tables * (length + 2 * 0.3) * (width + 2 * 0.3);
+            double kareta = tables * (length / 2) * (length / 2);
+
+            double priceUSD = pokrivki * 7 + kareta * 9;
+            double priceLV = priceUSD * 1.85;
+
+            Console.WriteLine($"{priceUSD:f2} USD");
+            Console.WriteLine($"{priceLV:f2} BGN");
+        }
+    }
+}
